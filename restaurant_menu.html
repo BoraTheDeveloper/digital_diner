@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Diner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        #header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        article {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: calc(33.333% - 20px);
+            min-width: 280px;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 992px) {
+            article {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 576px) {
+            article {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        article img:hover {
+            transform: scale(1.05);
+        }
+        article h3 {
+            margin: 15px 0;
+            text-align: center;
+        }
+        article p {
+            text-align: center;
+        }
+        article hr {
+            width: 80%;
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin: 10px auto;
+        }
+        .price {
+            font-style: italic;
+            color: #2c5282;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-sizing: border-box;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        .checkbox-group label {
+            display: inline;
+            margin: 0;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        .radio-group label {
+            display: inline;
+            margin: 0;
+        }
+
+        input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #2c5282;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        #menu-heading, #order-heading {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="header-img" src="header_img_1.png" alt="Digital Diner Logo">
+        <h1>The Digital Diner</h1>
+    </header>
+
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#order-form">Order Form</a>
+    </nav>
+
+    <main>
+        <section id="menu">
+            <h2 id="menu-heading">Menu</h2>
+            <div class="menu-section">
+                <article>
+                    <img src="cyber_burger.png" alt="Cyber Burger">
+                    <h3>Cyber Burger</h3>
+                    <p>A futuristic take on the classic burger with quantum-infused sauce and binary bacon bits.</p>
+                    <hr/>
+                    <span class="price">$12.99</span>
+                </article>
+                <article>
+                    <img src="mac_cheese.png" alt="Matrix Mac">
+                    <h3>Matrix Mac & Cheese</h3>
+                    <p>Glowing green mac & cheese with digital seasonings and holographic breadcrumbs.</p>
+                    <hr/>
+                    <span class="price">$10.99</span>
+                </article>
+                <article>
+                    <img src="pixel_pizza.png" alt="Pixel Pizza">
+                    <h3>Pixel Pizza</h3>
+                    <p>8-bit inspired pizza with RGB toppings and ray-traced cheese.</p>
+                    <hr/>
+                    <span class="price">$14.99</span>
+                </article>
+            </div>
+        </section>
+        <br/><hr/><br/>
+        <section id="order-form">
+            <h2 id="order-heading">Place Your Order</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="cyber-burger">Cyber Burger Quantity:</label>
+                    <input type="number" id="cyber-burger" name="cyber-burger" min="0" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="matrix-mac">Matrix Mac & Cheese Quantity:</label>
+                    <input type="number" id="matrix-mac" name="matrix-mac" min="0" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="pixel-pizza">Pixel Pizza Quantity:</label>
+                    <input type="number" id="pixel-pizza" name="pixel-pizza" min="0" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Add-ons:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="quantum-fries" name="sides" value="quantum-fries">
+                        <label for="quantum-fries">Quantum Fries (+$3.99)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="digital-drink" name="sides" value="digital-drink">
+                        <label for="digital-drink">Digital Drink (+$2.99)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Temperature Preference:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="hot" name="temp" value="hot">
+                        <label for="hot">Hot</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="cold" name="temp" value="cold">
+                        <label for="cold">Cold</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="special-requests">Special Requests:</label>
+                    <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any special requests or dietary requirements?"></textarea>
+                </div>
+
+                <input type="submit" value="Go To Checkout">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with love by @cseng110846</p>
+    </footer>
+</body>
+</html>
